@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Output Data</title>
+</head>
+
+<body>
+    <a href="../index.html">← Back</a>
+    <h2>Raw Output Data</h2>
+    <pre id="content">Loading...</pre>
+
+    <script>
+        fetch('output.txt')
+            .then(res => res.text())
+            .then(data => document.getElementById('content').textContent = data)
+            .catch(() => document.getElementById('content').textContent = "File not found.");
+    </script>
+</body>
+
+</html>
